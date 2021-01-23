@@ -459,7 +459,10 @@ class TracerGrind(Tracer):
         cmd_list=[tracergrind_exec, '--quiet', '--trace-children=yes', '--tool=tracergrind', '--filter='+str(self.addr_range), '--vex-iropt-register-updates=allregs-at-mem-access', '--output='+self.tmptracefile+'.grind'] + self.target + input_args
         output=self._exec(cmd_list, input_stdin, 1)
         oblock=self.processoutput(output, self.blocksize)
-        output=subprocess.check_output("texttrace %s >(grep '^.M' > %s)" % (self.tmptracefile+'.grind', self.tmptracefile), shell=True, executable='/bin/bash')
+        try:
+            output=subprocess.check_output("texttrace %s >(grep '^.M' > %s)" % (self.tmptracefile+'.grind', self.tmptracefile), shell=True, executable='/bin/bash')
+        except:
+            pass
         if not self.debug:
             os.remove(self.tmptracefile+'.grind')
         self._trace_init(n, iblock, oblock)
@@ -468,7 +471,10 @@ class TracerGrind(Tracer):
                 mem_mode=line[line.index('MODE')+6]
                 mem_addr=int(line[line.index('START_ADDRESS')+15:line.index('START_ADDRESS')+31], 16)
                 mem_size=int(line[line.index('LENGTH')+7:line.index('LENGTH')+10])
-                mem_data=int(line[line.index('DATA')+6:].replace(" ",""), 16)
+                try:
+                    mem_data=int(line[line.index('DATA')+6:].replace(" ",""), 16)
+                except:
+                    continue
                 for f in self.filters:
                     if mem_mode in f.modes and f.condition(self.stack_range, mem_addr, mem_size, mem_data):
                         self._trace_data[f.keyword].append(f.extract(mem_addr, mem_size, mem_data))
