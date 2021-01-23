@@ -16,8 +16,8 @@ Ce dossier contient le script deadpool_dca.py.
 
 ## Daredevil
 
-Ce dossier contient le porgramme daredevil.
+Ce dossier contient le programme daredevil.
 
 ## TracerGrind
 
-Ce dossier contient le fichier valgrind-3.16.1.diff permettant le faire un patch sur l'archive de valgrind pour l'ajout du plugin tracergrind sur ce dernier.
+Ce dossier contient le fichier `valgrind-3.16.1.diff` permettant le faire un patch sur l'archive de valgrind pour l'ajout du plugin tracergrind sur ce dernier.

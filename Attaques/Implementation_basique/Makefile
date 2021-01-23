@@ -1,6 +1,6 @@
 attaque: clean
 	./enregistrement_traces.py
-	../../Daredevil/daredevil -c mem_data*.attack_after_sbox.config
+	../../Utiles/daredevil -c mem_data*.attack_after_sbox.config
 
 
 clean:
