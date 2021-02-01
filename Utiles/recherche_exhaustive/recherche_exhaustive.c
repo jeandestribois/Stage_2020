@@ -1,21 +1,3 @@
-/****************************************************************************************
-Ce programme permet de faire une recherche exhaustive sur certains octets
-d'une clé AES 128.
-
-Utilisation :
-	Compilation : gcc main.c AES/aes.c AES/gmult.c -o recherche_exhaustive
-	Execution : ./a.out <arg1> <arg2> <arg3>
-
-Arguments : 
-	1ère : clé en hexadécimal avec deux points d'interogation remplaçants l'octet à chercher.
-			exemple : 0123456789abcdef01??456789abcdef
-	2ème : message clair à tester en hexadécimal
-			exemple : 0123456789abcdef0123456789abcdef
-	3ème : le bon chiffré du message clair en hexadécimal
-			exemple : 0123456789abcdef0123456789abcdef
-
-****************************************************************************************/
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
