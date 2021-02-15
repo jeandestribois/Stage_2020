@@ -4,12 +4,12 @@ Ce dossier contient une tentative d'attaque sur une l'implémentation numero 777
 
 ## Makefile
 
-* La commande `make visualisation` permet de générer une trace mémoire, de la stocker sous forme de base de données sqlite et de l'afficher. Il est nécessaire d'avoir installé le plugin `TracerGrind` ainsi que les programme `sqlitetrace` et `tracegraph`.
+* La commande `make visualisation` permet de générer une trace mémoire, de la stocker sous forme de base de données sqlite et de l'afficher. Il est nécessaire d'avoir installé le plugin `TracerGrind` ainsi que les programmes `sqlitetrace` et `tracegraph`.
 * La commande `make enregistrement` permet de lancer l'enregistrement des traces (100 traces seront générées et converties dans un format que le programme `daredevil` accepte).
 
 ## CPA
 
-Pour effectuer une CPA sur les traces générées, il est possible d'utliser les différents fichiers de configurations avec cette commande :
+Pour effectuer une CPA sur les traces générées, il est possible d'utliser les différents fichiers de configuration avec cette commande :
 
 ```bash
 ../../../Utiles/daredevil -c <un_fichier_de_configuration.conf>

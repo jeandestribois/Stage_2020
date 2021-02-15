@@ -1,6 +1,6 @@
 # Implémentation basique de l'AES-128 bits
 
-Ce dossier contient une attaque sur une implémentation que j'ai trouvé à cette adresse : https://github.com/dhuertas/AES.
+Ce dossier contient une attaque sur une implémentation sans contre-mesures contre la DCA disponible à cette adresse : https://github.com/dhuertas/AES.
 
 ## AES
 
@@ -8,7 +8,7 @@ Le dossier `AES` contient le code source de cette implémentation. Il a été n�
 
 ## Makefile
 
-* La commande `make visualisation` permet de générer une trace mémoire, de la stocker sous forme de base de données sqlite et de l'afficher. Il est nécessaire d'avoir installé le plugin `TracerGrind` ainsi que les programme `sqlitetrace` et `tracegraph`.
+* La commande `make visualisation` permet de générer une trace mémoire, de la stocker sous forme de base de données sqlite et de l'afficher. Il est nécessaire d'avoir installé le plugin `TracerGrind` ainsi que les programmes `sqlitetrace` et `tracegraph`.
 * La commande `make attaque` permet de lancer l'enregistrement des traces (30 traces seront générées et converties dans un format que le programme `daredevil` accepte) puis de lancer daredevil sur les données contenues dans la mémoire et l'attaque se faisant sur la position `AES_AFTER_SBOX`.
 
 ## Exécution manuelle
